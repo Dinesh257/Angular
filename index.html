@@ -1,0 +1,44 @@
+<html ng-app="myApp">
+<head>
+
+<link rel="stylesheet" href="style.css" />
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script>
+	myApp = angular.module('myApp', []);
+	myApp.controller('myController', function($scope, $http) {
+		$http.get('data.json').success(function(response) {
+			$scope.myData = response;
+		});
+	});
+</script>
+</head>
+<body ng-controller="myController">
+	<div style="border-style: solid; padding: 5; position: realtive">
+
+		Search : <input type="text" value="" ng-model="search" />
+		<hr />
+		<div>
+			<div
+				ng-show="(filteredData = (myData | filter:search)) && filteredData.length && search">
+				<div>
+					<div ng-if=data.gender== 'M' class="male"
+						ng-repeat="data in filteredData">
+						<b>{{data.name}}</b> <br>ID: {{data.id}}<br> GENDER:
+						{{data.gender}}<br> EMAIL: {{data.email}}<br> CITY:
+						{{data.city}}
+					</div>
+					<div>
+						<div ng-if=data.gender== 'F' class="female"
+							ng-repeat="data in filteredData">
+							<b>{{data.name}}</b> <br>ID: {{data.id}}<br> GENDER:
+							{{data.gender}}<br> EMAIL: {{data.email}}<br> CITY:
+							{{data.city}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

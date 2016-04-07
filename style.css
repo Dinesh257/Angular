@@ -1,0 +1,18 @@
+.male{
+height: 130; 
+width: 250; 
+border-style: solid; 
+border-color: blue;
+display: inline-block;
+position: realtive;
+margin:10;
+}
+.female{
+height: 130; 
+width: 250; 
+border-style: solid; 
+border-color: red;
+display: inline-block;
+position: realtive;
+margin:10;
+}
