@@ -23,14 +23,14 @@
 			<div
 				ng-show="(filteredData = (myData | filter:search)) && filteredData.length && search">
 				<div>
-					<div ng-if=data.gender== 'M' class="male"
+					<div ng-if="data.gender== 'M'" class="male"
 						ng-repeat="data in filteredData">
 						<b>{{data.name}}</b> <br>ID: {{data.id}}<br> GENDER:
 						{{data.gender}}<br> EMAIL: {{data.email}}<br> CITY:
 						{{data.city}}
 					</div>
 					<div>
-						<div ng-if=data.gender== 'F' class="female"
+						<div ng-if="data.gender== 'F'" class="female"
 							ng-repeat="data in filteredData">
 							<b>{{data.name}}</b> <br>ID: {{data.id}}<br> GENDER:
 							{{data.gender}}<br> EMAIL: {{data.email}}<br> CITY:
@@ -39,6 +39,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 </body>
 </html>
